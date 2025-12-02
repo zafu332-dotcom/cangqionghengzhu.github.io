@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>苍穹恒竹 | 以科技重塑东方风骨</title>
+    <style>
+        /* --- 全局重置与变量 --- */
+        :root {
+            --primary-green: #005A3F; /* 极客绿 */
+            --accent-gold: #C6A87C;   /* 香槟金 */
+            --tech-blue: #00A8E8;     /* 科技蓝 */
+            --bg-dark: #0a0a0a;       /* 深空黑 */
+            --text-main: #E0E0E0;     /* 钛金银 */
+            --text-dim: #888888;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            font-family: 'Helvetica Neue', Arial, sans-serif; /* 数据/正文用无衬线体 */
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, .serif {
+            font-family: 'Songti SC', 'Noto Serif SC', serif; /* 标题用宋体，体现文化 */
+            font-weight: 700;
+        }
+
+        a { text-decoration: none; color: inherit; transition: 0.3s; }
+        ul { list-style: none; }
+
+        /* --- 布局工具类 --- */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .flex { display: flex; justify-content: space-between; align-items: center; }
+        .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; }
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+        .text-center { text-align: center; }
+        .highlight { color: var(--primary-green); }
+        .gold { color: var(--accent-gold); }
+
+        /* --- 导航栏 --- */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 20px 0;
+            background: rgba(10, 10, 10, 0.9);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid #222;
+        }
+        .logo { font-size: 24px; font-weight: bold; letter-spacing: 2px; }
+        .nav-links a { margin-left: 40px; font-size: 14px; opacity: 0.7; }
+        .nav-links a:hover { opacity: 1; color: var(--primary-green); }
+
+        /* --- Hero 首屏 --- */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: radial-gradient(circle at center, #1a2e26 0%, #000000 70%);
+            position: relative;
+        }
+        .hero-content h1 {
+            font-size: 80px;
+            margin-bottom: 20px;
+            background: linear-gradient(to right, #fff, #C6A87C);
+            -webkit-background-clip: text;
+            color: transparent;
+            letter-spacing: 10px;
+        }
+        .hero-subtitle {
+            font-size: 24px;
+            color: var(--text-dim);
+            margin-bottom: 60px;
+            font-weight: 300;
+        }
+        
+        /* 核心数据动态展示栏 */
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 80px;
+            border-top: 1px solid #333;
+            padding-top: 40px;
+        }
+        .stat-item h3 { font-size: 48px; color: var(--primary-green); font-family: 'DIN Alternate', sans-serif; margin-bottom: 5px; }
+        .stat-item p { font-size: 14px; color: var(--text-dim); letter-spacing: 1px; }
+
+        /* --- 核心技术 Section --- */
+        .section { padding: 100px 0; }
+        .section-title {
+            font-size: 40px;
+            margin-bottom: 80px;
+            position: relative;
+            padding-left: 20px;
+            border-left: 4px solid var(--primary-green);
+        }
+
+        .tech-card {
+            background: #111;
+            padding: 40px;
+            border: 1px solid #222;
+            transition: 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+        .tech-card:hover { transform: translateY(-10px); border-color: var(--primary-green); }
+        .tech-icon { font-size: 40px; margin-bottom: 20px; color: var(--tech-blue); }
+        .tech-card h3 { font-size: 22px; margin-bottom: 15px; }
+        .tech-card p { color: #888; font-size: 14px; margin-bottom: 20px; }
+        .tech-data { font-size: 28px; font-weight: bold; color: var(--text-main); }
+        .tech-data span { font-size: 14px; color: var(--primary-green); margin-left: 5px; }
+
+<section id="products" class="section container">
+        <h2 class="section-title serif">产地出“竹”，城市出“智”</h2>
+        
+        <div class="grid-2 product-item">
+            <div class="product-img" style="background-image: url('1.jpg'); background-size: cover; background-position: center;"></div>
+            
+            <div class="product-text">
+                <h3 class="serif">大国基建 · 绿色脊梁</h3>
+                <p>应用于大型机场、体育馆穹顶。高强度、B1级阻燃，以竹代钢，构建会呼吸的建筑生命体。</p>
+                <div class="product-params">
+                    <div class="param-box">
+                        <strong>210°C</strong>
+                        <span>耐热起始温度</span>
+                    </div>
+                    <div class="param-box">
+                        <strong>23.15%</strong>
+                        <span>残炭率提升</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid-2 product-item">
+            <div class="product-text">
+                <h3 class="serif">高定家居 · 东方雅韵</h3>
+                <p>突破传统竹材“过刚易折”的魔咒。动模干式弯曲技术实现免钉装配，让竹材像丝绸一样在空间中流动。</p>
+                <div class="product-params">
+                    <div class="param-box">
+                        <strong>0醛</strong>
+                        <span>绿色环保</span>
+                    </div>
+                    <div class="param-box">
+                        <strong>95%+</strong>
+                        <span>弯曲良品率</span>
+                    </div>
+                </div>
+            </div>
+            <div class="product-img" style="background-image: url('2.jpg'); background-size: cover; background-position: center;"></div> 
+        </div>
+    </section>
+
+        /* --- 社会价值 (三角布局) --- */
+        .impact-section { background: #050505; text-align: center; }
+        .impact-grid { margin-top: 60px; }
+        .impact-card { padding: 30px; }
+        .impact-card h4 { font-size: 20px; margin-bottom: 10px; color: var(--primary-green); }
+
+        /* --- 底部 --- */
+        footer { padding: 60px 0; border-top: 1px solid #222; text-align: center; color: #666; font-size: 12px; }
+        .partners { margin-bottom: 40px; display: flex; justify-content: center; gap: 40px; filter: grayscale(100%); opacity: 0.5; }
+        
+        /* 移动端适配简单处理 */
+        @media (max-width: 768px) {
+            .hero-content h1 { font-size: 48px; }
+            .grid-3, .grid-2 { grid-template-columns: 1fr; gap: 30px; }
+            .hero-stats { flex-direction: column; gap: 30px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container flex">
+            <div class="logo serif">苍穹韧竹</div>
+            <nav class="nav-links">
+                <a href="#tech">核心技术</a>
+                <a href="#products">产品应用</a>
+                <a href="#impact">社会价值</a>
+                <a href="#about">关于我们</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container hero-content">
+            <h1 class="serif">苍穹恒竹</h1>
+            <p class="hero-subtitle">以科技重塑东方风骨 · Redefining Bamboo</p>
+            
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <h3>150<span style="font-size:20px">天</span></h3>
+                    <p>0级防霉验证</p>
+                </div>
+                <div class="stat-item">
+                    <h3>387.9<span style="font-size:20px">%</span></h3>
+                    <p>塑性变形提升</p>
+                </div>
+                <div class="stat-item">
+                    <h3>82.5<span style="font-size:20px">%</span></h3>
+                    <p>刚度软化降低</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="tech" class="section container">
+        <h2 class="section-title serif">深入细胞壁的“微创手术”</h2>
+        <div class="grid-3">
+            <div class="tech-card">
+                <div class="tech-icon">🧬</div>
+                <h3>生物酶分子重构</h3>
+                <p>利用特异性生物酶精准剔除淀粉糖分，植入高活性氮基团，从根源切断霉菌营养链。</p>
+                <div class="tech-data">16倍 <span>抑菌效力提升</span></div>
+            </div>
+            <div class="tech-card">
+                <div class="tech-icon">🛡️</div>
+                <h3>纳米盾构锁定</h3>
+                <p>引入 TiO2 与 MOF 材料构建微观物理楔子，锁住尺寸，抵抗湿胀干缩。</p>
+                <div class="tech-data">52.46% <span>吸湿膨胀降低</span></div>
+            </div>
+            <div class="tech-card">
+                <div class="tech-icon">🌊</div>
+                <h3>水热塑性软化</h3>
+                <p>基于与三箭工贸联合研发的 135°C 水热工艺，诱导木质素玻璃化转变，赋予竹材极强可塑性。</p>
+                <div class="tech-data">R&lt;5mm <span>极限弯曲曲率</span></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="products" class="section container">
+        <h2 class="section-title serif">产地出“竹”，城市出“智”</h2>
+        
+        <div class="grid-2 product-item">
+            <div class="product-img"></div>
+            <div class="product-text">
+                <h3 class="serif">大国基建 · 绿色脊梁</h3>
+                <p>应用于大型机场、体育馆穹顶。高强度、B1级阻燃，以竹代钢，构建会呼吸的建筑生命体。</p>
+                <div class="product-params">
+                    <div class="param-box">
+                        <strong>210°C</strong>
+                        <span>耐热起始温度</span>
+                    </div>
+                    <div class="param-box">
+                        <strong>23.15%</strong>
+                        <span>残炭率提升</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid-2 product-item">
+            <div class="product-text">
+                <h3 class="serif">高定家居 · 东方雅韵</h3>
+                <p>突破传统竹材“过刚易折”的魔咒。动模干式弯曲技术实现免钉装配，让竹材像丝绸一样在空间中流动。</p>
+                <div class="product-params">
+                    <div class="param-box">
+                        <strong>0醛</strong>
+                        <span>绿色环保</span>
+                    </div>
+                    <div class="param-box">
+                        <strong>95%+</strong>
+                        <span>弯曲良品率</span>
+                    </div>
+                </div>
+            </div>
+            <div class="product-img"></div> </div>
+    </section>
+
+    <section id="impact" class="section impact-section">
+        <div class="container">
+            <h2 class="section-title serif" style="border:none; text-align:center;">承生态之重 · 扬文化之魂 · 富山林之民</h2>
+            <div class="grid-3 impact-grid">
+                <div class="impact-card">
+                    <h4 class="serif">🌱 响应双碳</h4>
+                    <p>竹林固碳能力是普通森林的1.46倍。我们让竹材寿命延长10倍，即是锁定碳汇。</p>
+                </div>
+                <div class="impact-card">
+                    <h4 class="serif">🏮 推广文化</h4>
+                    <p>用最前沿的纳米科技，守护最古老的东方气节。让中国竹重回世界舞台。</p>
+                </div>
+                <div class="impact-card">
+                    <h4 class="serif">💰 乡村振兴</h4>
+                    <p>解决霉变损耗，变废为宝。让绿水青山真正成为竹农手中的金山银山。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="partners">
+                <span>浙江农林大学</span>
+                <span>浙江三箭工贸有限公司</span>
+                <span>国际竹藤中心</span>
+            </div>
+            <p>© 2025 苍穹恒竹项目组 | 挑战杯目展示</p>
+            <p style="margin-top:10px; color:#444;">数据来源：Industrial Crops & Products (Q1) / Forests (Q1)</p>
+        </div>
+    </footer>
+
+</body>
+</html>
